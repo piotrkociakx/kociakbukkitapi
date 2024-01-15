@@ -1,0 +1,9 @@
+name: KociakAPI
+main: pl.Author.Main.Main
+version: 1.0
+api-version: 1.13
+
+commands:
+  KociakAPI:
+    aliases:
+      - kitty

@@ -1,0 +1,14 @@
+mojegui:
+  options:
+    title: "&0mojeGUI"
+    slots: 27 # sloty
+    background: "BLACK_STAINED_GLASS_PANE" # Materiał tła GUI
+  slots:
+    11:
+      material: EMERALD_BLOCK
+      count: 1
+      enchanted: true
+      name: "&atest"
+      lore:
+        - "&clore1"
+        - "&alore2"
