@@ -18,7 +18,7 @@ public class ConfigApiManager {
     private File apiConfigFile;
 
     public ConfigApiManager() {
-        this.plugin = Main.instance;
+        this.plugin = Main.getInstance();
         loadApiConfig();
     }
 

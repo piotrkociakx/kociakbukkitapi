@@ -5,10 +5,12 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
+import pl.Author.Main.Main;
 import pl.Author.kociakbukkitapi.Kociak_bukkit_api;
 import pl.Author.kociakbukkitapi.guicreator.guiCreator;
 import pl.Author.kociakbukkitapi.helpers.ChatHelper;
-import pl.Author.kociakbukkitapi.methods.player.PlayerMethods;
+import pl.Author.kociakbukkitapi.methods.player.apiPlayer;
+import pl.Author.kociakbukkitapi.user.User;
 
 public class PluginGUIListener implements Listener {
 
@@ -19,6 +21,8 @@ public class PluginGUIListener implements Listener {
         guiCreator guiCreator = kociakBukkitApi.getAPI.getGuiCreator;
         Player player = (Player) event.getInventory().getHolder();
 
+        User user = Main.getInstance().getUserManager().getOrCreate(player.getUniqueId());
+
         if (event.getInventory().getHolder() instanceof Player) {
             Inventory inventory = guiCreator.getGui(player, "&aZazadzanie pluginem", 54);
             if (player.getOpenInventory().getTitle().equalsIgnoreCase(ChatHelper.colored("&aZazadzanie pluginem"))) {
@@ -28,18 +32,18 @@ public class PluginGUIListener implements Listener {
                 if(slot == (inventory.getSize() / 2) + 3) {
                     try {
                         kociakBukkitApi.getAPI.getConfigs.getconfigManager.reloadConfig();
-                        PlayerMethods.sendmessage(player, "&aPomyslnie przeladowano config");
+                        user.getApiPlayer().sendmessage("&aPomyslnie przeladowano config");
                     } catch (Exception e) {
-                        PlayerMethods.sendmessage(player, "Nie udalo sie zaladowac konfiguracji: \n"+e.getMessage());
+                        user.getApiPlayer().sendmessage("Nie udalo sie zaladowac konfiguracji: \n"+e.getMessage());
                         e.printStackTrace();
                     }
                 }
                 if(slot == (inventory.getSize() / 2) + 5) {
                     try {
                         kociakBukkitApi.getAPI.getConfigs.getconfigApiManager.reloadConfig();
-                        PlayerMethods.sendmessage(player, "&aPomyslnie przeladowano config api");
+                        user.getApiPlayer().sendmessage("&aPomyslnie przeladowano config api");
                     } catch (Exception e) {
-                        PlayerMethods.sendmessage(player, "Nie udalo sie zaladowac konfiguracji: \n"+e.getMessage());
+                        user.getApiPlayer().sendmessage("Nie udalo sie zaladowac konfiguracji: \n"+e.getMessage());
                         e.printStackTrace();
                     }
                 }
