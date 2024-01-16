@@ -29,3 +29,5 @@ replay_pid*
 my-plugin-change-in.pom.xml.iml
 .idea/modules.xml
 .idea/misc.xml
+.idea/*
+target/*
