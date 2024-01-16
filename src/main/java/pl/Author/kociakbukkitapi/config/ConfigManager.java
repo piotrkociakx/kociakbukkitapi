@@ -14,7 +14,7 @@ public class ConfigManager {
         loadConfig();
     }
     public void loadConfig() {
-        Main plugin = Main.instance;
+        Main plugin = Main.getInstance();
         try {
             plugin.saveDefaultConfig();
             plugin.reloadConfig();

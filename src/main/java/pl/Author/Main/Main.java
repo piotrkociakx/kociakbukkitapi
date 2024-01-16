@@ -1,5 +1,6 @@
 package pl.Author.Main;
 
+import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
 import pl.Author.Main.commands.PluginCommand;
 import pl.Author.Main.listeners.PluginGUIListener;
@@ -7,10 +8,17 @@ import pl.Author.kociakbukkitapi.Kociak_bukkit_api;
 import pl.Author.kociakbukkitapi.config.ConfigManager;
 import pl.Author.kociakbukkitapi.memory.MemoryManagment;
 import pl.Author.kociakbukkitapi.methods.plugin.PluginMethods;
+import pl.Author.kociakbukkitapi.user.UserManager;
 
 public class Main extends JavaPlugin {
-    public static Main instance;
+
+
+    @Getter
+    private static Main instance;
     public ConfigManager configManager;
+
+    @Getter
+    public UserManager userManager;
 
 
     @Override

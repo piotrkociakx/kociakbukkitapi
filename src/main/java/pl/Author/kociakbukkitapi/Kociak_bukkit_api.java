@@ -17,7 +17,7 @@ public class Kociak_bukkit_api {
 
     public void loadAPI() {
         MemoryManagment.runGarbageCollection();
-        Main main = Main.instance;
+        Main main = Main.getInstance();
         Kociak_bukkit_api kociakBukkitApi = new Kociak_bukkit_api();
         ConfigApiManager configApiManager = new ConfigApiManager();
         configApiManager.createApiConifg();

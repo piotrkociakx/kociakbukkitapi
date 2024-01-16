@@ -16,7 +16,7 @@ public class MySQLDataBase {
     private Statement statement;
 
     public MySQLDataBase() {
-        this.plugin = Main.instance;
+        this.plugin = Main.getInstance();
         this.configApiManager = new ConfigApiManager();
     }
 
