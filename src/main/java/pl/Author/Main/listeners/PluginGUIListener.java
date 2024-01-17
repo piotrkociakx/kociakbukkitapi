@@ -6,9 +6,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import pl.Author.kociakbukkitapi.Kociak_bukkit_api;
-import pl.Author.kociakbukkitapi.guicreator.guiCreator;
+import pl.Author.kociakbukkitapi.guicreator.GuiCreator;
 import pl.Author.kociakbukkitapi.helpers.ChatHelper;
+<<<<<<< Updated upstream
 import pl.Author.kociakbukkitapi.methods.player.PlayerMethods;
+=======
+import pl.Author.kociakbukkitapi.user.User;
+>>>>>>> Stashed changes
 
 public class PluginGUIListener implements Listener {
 
@@ -16,7 +20,7 @@ public class PluginGUIListener implements Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
         Kociak_bukkit_api kociakBukkitApi = new Kociak_bukkit_api();
-        guiCreator guiCreator = kociakBukkitApi.getAPI.getGuiCreator;
+        GuiCreator guiCreator = kociakBukkitApi.getAPI.getGuiCreator;
         Player player = (Player) event.getInventory().getHolder();
 
         if (event.getInventory().getHolder() instanceof Player) {

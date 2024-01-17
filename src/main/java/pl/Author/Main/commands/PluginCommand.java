@@ -7,7 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import pl.Author.kociakbukkitapi.Kociak_bukkit_api;
 import pl.Author.kociakbukkitapi.commandHandler.CommandKittyHandler;
 import pl.Author.kociakbukkitapi.config.ConfigManager;
-import pl.Author.kociakbukkitapi.guicreator.guiCreator;
+import pl.Author.kociakbukkitapi.guicreator.GuiCreator;
 import pl.Author.kociakbukkitapi.helpers.ChatHelper;
 
 public class PluginCommand implements CommandKittyHandler.CommandHandler {
@@ -20,7 +20,7 @@ public class PluginCommand implements CommandKittyHandler.CommandHandler {
         }
 
         Kociak_bukkit_api kociakBukkitApi = new Kociak_bukkit_api();
-        guiCreator guiCreator = kociakBukkitApi.getAPI.getGuiCreator;
+        GuiCreator guiCreator = kociakBukkitApi.getAPI.getGuiCreator;
 
 
         Inventory inventory = guiCreator.getGui(player, "&aZazadzanie pluginem", 54);
