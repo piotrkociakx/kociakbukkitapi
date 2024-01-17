@@ -5,9 +5,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.java.JavaPlugin;
 import pl.Author.Main.Main;
-import pl.Author.kociakbukkitapi.Kociak_bukkit_api;
 import pl.Author.kociakbukkitapi.commandHandler.CommandKittyHandler;
-import pl.Author.kociakbukkitapi.methods.player.apiPlayer;
 
 import java.util.List;
 
@@ -32,7 +30,7 @@ public class PluginMethods {
         PluginCommand command = plugin.getCommand(commandName);
 
         if (command != null) {
-            command.setExecutor(new CommandKittyHandler(commandHandler, Main.getInstance().configManager, plugin));
+            command.setExecutor(new CommandKittyHandler(commandHandler, Main.instance.configManager, plugin));
         } else {
             plugin.getLogger().warning("Plugin '" + plugin.getName() + "' can't load a command '" + commandName + "', maybe is not registered in plugin.yml?");
         }

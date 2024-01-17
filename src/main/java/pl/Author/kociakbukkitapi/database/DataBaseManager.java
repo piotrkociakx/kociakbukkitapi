@@ -17,7 +17,7 @@ public class DataBaseManager {
 
     public DataBaseManager() {
         databasetype = new ConfigApiManager().getConfig().get("database.type");
-        this.yamldb = new YamlDataBase();;
+        this.yamldb = new YamlDataBase();
         this.mysqldb = new MySQLDataBase();
     }
 
