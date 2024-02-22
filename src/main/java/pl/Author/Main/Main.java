@@ -8,9 +8,13 @@ import pl.Author.kociakbukkitapi.config.ConfigManager;
 import pl.Author.kociakbukkitapi.memory.MemoryManagment;
 import pl.Author.kociakbukkitapi.methods.plugin.PluginMethods;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main extends JavaPlugin {
     public static Main instance;
     public ConfigManager configManager;
+    public static List<String> commands = new ArrayList<>();
 
 
     @Override
@@ -22,13 +26,10 @@ public class Main extends JavaPlugin {
         kociakBukkitApi.loadAPI();
 
         // commands
-        pluginMethods.registerCommand("KociakAPI", new PluginCommand()); // komenda z nazwa plg
-        pluginMethods.registerPermission(getName()+".admin"); // rejstrowanie pluginu
-
-
+        pluginMethods.registerPermission(getName()+".admin"); // rejstrowanie permisji
         // listeners
         pluginMethods.registerListener(new PluginGUIListener());
-
+        pluginMethods.getCommand(getName()).register(new PluginCommand()).addAliases(new String[]{"kitty"}).setTabCompleter(new String[]{"test1", "test2"});
     }
 
 

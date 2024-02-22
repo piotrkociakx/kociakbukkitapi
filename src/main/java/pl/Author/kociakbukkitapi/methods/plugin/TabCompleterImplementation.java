@@ -11,12 +11,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class TabCompleterImplementation implements TabCompleter {
-    private final List<List<String>> options;
+    private final String[] options;
     private final String tabCommand;
 
-    public TabCompleterImplementation(String tabCommand, List<List<String>> options) {
+    public TabCompleterImplementation(String tabCommand, String[] options) {
         this.tabCommand = tabCommand;
-        this.options = options != null ? options : Collections.emptyList();
+        this.options = options != null ? options : new String[0];
     }
 
     @Override
@@ -29,9 +29,9 @@ public class TabCompleterImplementation implements TabCompleter {
 
         int argsLength = args.length;
 
-        if (argsLength > 0 && argsLength <= options.size()) {
-            List<String> currentOptions = options.get(argsLength - 1);
-            StringUtil.copyPartialMatches(args[argsLength - 1], currentOptions, completions);
+        if (argsLength > 0 && argsLength <= options.length) {
+            String currentOption = options[argsLength - 1];
+            StringUtil.copyPartialMatches(args[argsLength - 1], Collections.singletonList(currentOption), completions);
         }
 
         Collections.sort(completions);

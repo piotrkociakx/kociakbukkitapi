@@ -5,14 +5,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.java.JavaPlugin;
 import pl.Author.kociakbukkitapi.Kociak_bukkit_api;
-import pl.Author.kociakbukkitapi.commandHandler.CommandKittyHandler;
+import pl.Author.kociakbukkitapi.handler.CommandKittyHandler;
 import pl.Author.kociakbukkitapi.config.ConfigManager;
 import pl.Author.kociakbukkitapi.guicreator.GuiCreator;
 import pl.Author.kociakbukkitapi.helpers.ChatHelper;
 
 public class PluginCommand implements CommandKittyHandler.CommandHandler {
 
-;    @Override
+    @Override
     public void execute(Player player, String[] args, ConfigManager config, JavaPlugin plugin) {
         if(!player.hasPermission(plugin.getName().toLowerCase()+ ".admin")) {
             player.sendMessage(ChatHelper.colored("&cNie masz uprawnien do tej komendy"));
